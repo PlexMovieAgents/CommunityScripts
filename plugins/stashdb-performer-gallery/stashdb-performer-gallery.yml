@@ -11,6 +11,10 @@ settings:
     displayName: Download parent folder
     description: Download location for files, note this should be in a different folder to stash and in a folder covered by stash. You may need to create a new library path to cover this directory.
     type: STRING
+  runPerformerScraper:
+    displayName: Run stash scrapers on profile urls
+    description: Run scrapers on profile urls
+    type: BOOLEAN
 
 hooks:
   - name: modify performer
@@ -26,13 +30,12 @@ hooks:
     triggeredBy:
       - Image.Update.Post
 
-
 tasks:
-  - name: 'Process Performers'
+  - name: "Process Performers"
     description: Fetch performer images for performers with the [performer gallery] tag
     defaultArgs:
       mode: processPerformers
-  - name: 'relink missing images'
+  - name: "relink missing images"
     description: reprocess missing images
     defaultArgs:
       mode: processImages

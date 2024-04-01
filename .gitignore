@@ -1,2 +1,4 @@
 /_site
 *.pyc
+node_modules
+dist
